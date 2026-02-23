@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-coffee: #3C2A21;    /* Dark Brown (Dashboard Color) */
+  --accent-coffee: #603601;     /* Golden Brown */
+  --bg-cream: #fdfaf7;          /* Soft Cream Background */
+  --light-tan: #d4a373;         /* Accent for highlights */
+}
+
+/* Base Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-cream);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Smooth Fade-in Animation for Sections */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Background Image Slow Zoom (Video Feel) */
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.animate-fade { 
+  animation: fadeInUp 1s ease-out forwards; 
+}
+
+/* Custom Scrollbar (Coffee Theme) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-coffee);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-coffee);
+}
+
+/* Link and Button Global Styles */
+a {
+  transition: 0.3s ease;
+}
+
+button {
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 40px !important; }
+  h2 { font-size: 32px !important; }
+  nav { padding: 20px !important; }
+}
